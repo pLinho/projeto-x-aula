@@ -1,0 +1,46 @@
+:host {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(145deg, red, blue);
+}
+
+form {
+    width: 350px;
+    padding: 24px;
+    display: flex;
+    background-color: rgba(#000000, 0.3);
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0px 6px 6px rgba(#000000, 0.4);
+
+    > * {
+        flex: auto;
+        margin: 6px;
+    }
+}
+
+input {
+    padding: 12px 6px;
+    border: none;
+    box-shadow: inset 0px 3px 6px rgba(#000000, 0.4);
+    border-radius: 6px;
+}
+input:focus {
+    outline-width: 0;
+    box-shadow: inset 0px 3px 3px rgba(#0000ff, 0.4);
+}
+button {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+
+    &:active {
+        background-color: #000000;
+        color: white;
+    }
+}
