@@ -18,9 +18,19 @@ export class ProductService {
         return await this.http.get<IProduct[]>(endpoint, {
             params: params as any
         }).toPromise().then(products => {
-            return products.map(ip => new Product(ip))
+            return products.map(prod => new Product(prod))
         })
     }
 
-
+    async manter(produto: IProduct) {
+        const endpoint = 'http://desenv.ni.nfnoato.com.br/produto/api/produto/manter';
+        /* const params = {
+            texto_pesquisa: query,
+            qtde_registros: 5,
+            status: 'A'
+        } */
+        return await this.http.post<any>(endpoint, produto).toPromise().then(products => {
+            return products.map(prod => new Product(prod))
+        })
+    }
 }

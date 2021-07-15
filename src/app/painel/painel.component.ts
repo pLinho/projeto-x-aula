@@ -10,7 +10,7 @@ import { ProductService } from './product.service';
 export class PainelComponent implements OnInit {
   produtos: IProduct[];
   selectedItem: IProduct;
-  
+
   constructor(
     private readonly productService: ProductService,
   ) { }
@@ -20,6 +20,10 @@ export class PainelComponent implements OnInit {
 
   async pesquisar(query: string) {
     this.produtos = await this.productService.getProducts(query);
+  }
+
+  async manter() {
+    await this.productService.manter(this.selectedItem);
   }
 
 }

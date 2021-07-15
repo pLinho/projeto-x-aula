@@ -4,6 +4,11 @@
     flex: auto;
 }
 
+.toolbar {
+    display: flex;
+    flex-direction: row;
+}
+
 .divider {
     display: flex;
     flex-direction: row;
@@ -22,7 +27,7 @@
     .produto {
         padding: 12px 6px;
         &.selected {
-            background-color: aquamarine;
+            background: linear-gradient(to top, #969696, #dedede);
         }
     }
 }

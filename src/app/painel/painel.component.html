@@ -1,4 +1,9 @@
-<input #pesquisa type="text" placeholder="pesquisa" (keydown.enter)="pesquisar(pesquisa.value)">
+<div class="toolbar">
+    <input #pesquisa type="text" placeholder="pesquisa" (keydown.enter)="pesquisar(pesquisa.value)">
+    <button (click)="manter()" >Salvar</button>
+</div>
+
+
 <div class="divider">
     <div class="lista">
         <div class="produto" [class.selected]="selectedItem===produto" *ngFor="let produto of produtos"

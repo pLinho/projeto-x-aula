@@ -20,7 +20,8 @@ export class Product implements IProduct {
 
         if (this.situacao === 'Modificado') {
             if (!this.atributosModificados) this.atributosModificados = [];
-            this.atributosModificados.push(property_name);
+            if (this.atributosModificados.indexOf(property_name) === -1)
+                this.atributosModificados.push(property_name);
         }
     }
 
@@ -63,7 +64,11 @@ export class Product implements IProduct {
 
     toJSON() {
         return {
-            ...this,
+            atributosModificados: this.atributosModificados,
+            descricao: this.descricao,
+            status: this.status,
+            gtin: this.gtin,
+            situacao: this.situacao,
         }
     }
 }
