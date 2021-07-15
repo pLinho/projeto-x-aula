@@ -27,7 +27,7 @@ export class UserService {
       responseType: 'text'
     } as any).toPromise().then((r) => {
       if (r) {
-        this.router.navigate(['/painel']);s
+        this.router.navigate(['/painel']);
       }
       return r;
     });
