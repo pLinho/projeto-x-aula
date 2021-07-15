@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from './models/i-product';
+import { IProduct } from './models/i-product';
 import { ProductService } from './product.service';
 
 @Component({
@@ -8,8 +8,9 @@ import { ProductService } from './product.service';
   styleUrls: ['./painel.component.scss']
 })
 export class PainelComponent implements OnInit {
-
-  produtos: Product[];
+  produtos: IProduct[];
+  selectedItem: IProduct;
+  
   constructor(
     private readonly productService: ProductService,
   ) { }

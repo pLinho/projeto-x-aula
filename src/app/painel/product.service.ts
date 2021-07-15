@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Product } from './models/i-product';
+import { IProduct } from './models/i-product';
+import { Product } from './models/product';
 
 @Injectable({
     providedIn: 'root'
@@ -14,9 +15,11 @@ export class ProductService {
             qtde_registros: 5,
             status: 'A'
         }
-        return await this.http.get<Product[]>(endpoint, {
+        return await this.http.get<IProduct[]>(endpoint, {
             params: params as any
-        }).toPromise()
+        }).toPromise().then(products => {
+            return products.map(ip => new Product(ip))
+        })
     }
 
 

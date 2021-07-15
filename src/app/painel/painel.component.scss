@@ -1,0 +1,28 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+
+.divider {
+    display: flex;
+    flex-direction: row;
+    flex: auto;
+}
+
+.selectedItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+
+    .produto {
+        padding: 12px 6px;
+        &.selected {
+            background-color: aquamarine;
+        }
+    }
+}

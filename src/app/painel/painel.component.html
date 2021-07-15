@@ -1,7 +1,15 @@
 <input #pesquisa type="text" placeholder="pesquisa" (keydown.enter)="pesquisar(pesquisa.value)">
-
-
-{{
-produtos | json
-
-}}
+<div class="divider">
+    <div class="lista">
+        <div class="produto" [class.selected]="selectedItem===produto" *ngFor="let produto of produtos"
+            (click)="selectedItem = produto">
+            {{ produto.descricao }}
+        </div>
+    </div>
+    <div *ngIf="selectedItem" class="selectedItem">
+        <input type="text" [(ngModel)]="selectedItem.descricao">
+        <input type="text" [(ngModel)]="selectedItem.status">
+        <input type="text" [(ngModel)]="selectedItem.gtin">
+        <input type="text" [(ngModel)]="selectedItem.situacao">
+    </div>
+</div>
